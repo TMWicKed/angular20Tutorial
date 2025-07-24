@@ -1,0 +1,114 @@
+<tr>
+    <td>
+        @if (isParaVisisble == true) {
+        <p>This is smaple para!!</p>
+        }
+        @else {
+            <h3>This variable has false value!</h3>
+        }
+    </td>
+    <td>
+        <button (click)="isParaVisisble = true">Show P</button>
+    </td>
+    <td>
+        <button (click)="isParaVisisble = false">Hide P</button>
+    </td>
+
+</tr>
+
+<tr>
+    <!-- you can do the abouve or you can define a method to assign the value of isParaVisisble in .ts file //-->
+    <td>
+        <button (click)="showP()">Show P</button>
+    </td>
+    <td>
+        <button (click)="hideP()">Hide P</button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <input type="text" [(ngModel)]="startingMonthName" placeholder="Enter month name (e.g., jan, feb, etc.)">
+    </td>
+    <td>
+        @if (startingMonthName == 'jan') {
+            <span>January</span>
+        }@else if (startingMonthName == 'feb') {
+            <span>February</span>
+        }@else if (startingMonthName == 'mar') {
+            <span>March</span>
+        }@else if (startingMonthName == 'apr') {
+            <span>April</span>
+        }@else if (startingMonthName == 'may') {
+            <span>May</span>
+        }@else if (startingMonthName == 'jun') {
+            <span>June</span>
+        }@else if (startingMonthName == 'jul') {
+            <span>July</span>
+        }@else if (startingMonthName == 'aug') {
+            <span>August</span>
+        }@else if (startingMonthName == 'sep') {
+            <span>September</span>
+        }@else if (startingMonthName == 'oct') {
+            <span>October</span>
+        }@else if (startingMonthName == 'nov') {
+            <span>November</span>
+        }@else if (startingMonthName == 'dec') {
+            <span>December</span>
+        }@else {
+            <span>Invalid Month</span>
+        }
+    </td>
+
+</tr>
+
+
+<tr>
+    <td>
+        <ul>
+            @for (item of cityList; track $index) {
+                <li>{{ item }}</li>
+            }
+        </ul>
+    </td>
+    <td>
+        <select name="" id="">
+            @for (item of cityList; track $index) {
+                <option value="">{{ item }}</option>
+            }
+        </select>
+    </td>
+</tr>
+
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentList; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.city}}</td>
+                <!-- <td>
+                    @if (item.isActive == true) {
+                        <h6>Active</h6>
+                    }@else {
+                        <h6>Inactive</h6>
+                    }
+                </td> -->
+                <!-- Either you can do abouve or below, they are same -->
+                <td>{{item.isActive ? 'Active' : 'Inactive'}}</td> 
+            </tr>
+        }
+    </tbody>
+</table>
