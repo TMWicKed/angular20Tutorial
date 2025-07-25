@@ -1,5 +1,5 @@
-<h2>Welcome</h2>
-<!-- 
+<!-- <h2>Welcome</h2>
+
 <table style="width: 100%;">
   <tr>
     <td>
@@ -9,14 +9,40 @@
       <app-user></app-user>
     </td>
   </tr>
-</table> //-->
+</table>
 
-<!-- <div>
+<div>
   <app-data-binding></app-data-binding>
-</div> -->
+</div>
 
-<!-- <div>
+<div>
   <app-signal-ex></app-signal-ex>
-</div> -->
+</div>
 
-<app-contro-flow></app-contro-flow>
+<app-contro-flow></app-contro-flow> //-->
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Angular 20 Tutorial</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link admin"  routerLink="admin">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link user" routerLink="control-flow">Control-Flow</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link data-binding" routerLink="data-binding">Data-Binding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link signal-ex" routerLink="signal">Signal</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
