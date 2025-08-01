@@ -1,17 +1,36 @@
-import { NgClass, NgStyle } from '@angular/common';
+import { AsyncPipe, DatePipe, DecimalPipe, JsonPipe, LowerCasePipe, NgClass, NgStyle, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnChanges, OnDestroy, OnInit, signal } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [NgClass, NgStyle],
+  imports: [NgClass, NgStyle, UpperCasePipe, LowerCasePipe, TitleCasePipe, SlicePipe, JsonPipe, AsyncPipe, DecimalPipe, DatePipe],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
 export class AttDirective implements OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, OnChanges{
 
   div1ClassName = signal<string>("" );
-
   isDiv2Green = signal<boolean>(false);
+  firstName: string = "Harman";
+  courseName: string = "Angular 20 tutorial";
+  rollNoList: number[] = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  // Example of an object data source
+  objExample: any = {
+    name: "Harman",
+    age: 25,
+    course: "Angular 20 tutorial"
+  }
+  // Example of an observable data source
+  dataObservable: Observable<string> = of("Hello from Observable!");
+  // Example of a promise data source
+  promiseData: Promise<string> = new Promise(resolve => {
+    setTimeout(() => resolve("Hello from Promise!"), 2000);
+  })
+  valueToFormat: number = 1234.5678;
+  dateToFormat: Date = new Date();
+
+
 
   constructor() {
     // Initial setup if needed

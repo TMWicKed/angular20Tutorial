@@ -20,3 +20,97 @@
         <button class="btn btn-success" (click)="toggleDiv2Color()">Toggle Bg Colour</button>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-3">
+        <p>First Name: {{firstName}}</p>
+        <p>Course Name: {{courseName}}</p>
+        <p>Roll No List: {{rollNoList}}</p>
+        <br>
+        <h5> Lower and Upper Case Example </h5>
+        <p>First Name: {{firstName | uppercase}}</p>
+        <p>Course Name: {{courseName | lowercase}}</p>
+        <br>
+        <h5> Title Case Example </h5>
+        <p>First Name: {{firstName | titlecase}} </p>
+        <p>Course Name: {{courseName | titlecase}} </p>
+        <br>
+        <h5> Slice Example </h5>
+        <p>Roll No List: {{rollNoList | slice:0:3}}</p>
+        <p>Roll No List: {{rollNoList | slice:3:6}}</p>
+        <p>Roll No List: {{rollNoList | slice:3}}</p>
+        <br>
+        <h5> JSON Example </h5>
+        <p>Object printed without using JsonPipe: {{objExample}}</p>
+        <!-- We can use the json pipe to display the object as a JSON string -->
+        <pre>Object printed using JsonPipe:{{objExample | json}}</pre>
+        <br>
+        <h5> Async Example </h5>
+        <!-- Automatic Subscription/Unsubscription:
+        Eliminates manual subscription and unsubscription management, reducing boilerplate code and preventing memory leaks.
+        Simplified Templates:
+        Allows direct use of Observables and Promises in templates, making the code cleaner and more readable.
+        Automatic Change Detection:
+        Triggers change detection when new values are emitted by the Observable or resolved by the Promise, ensuring the view is updated automatically. -->
+        <p>{{dataObservable | async}}</p>
+        <p>{{promiseData | async}}</p>
+        <br>
+        <h5> Number Example </h5>
+        <!-- anotherNumber | number:'1.2-2': This uses the digitsInfo parameter.
+        1: Minimum number of integer digits (defaults to 1).
+        2-2: Minimum and maximum number of fractional digits (here, exactly 2). -->
+        <p>Original Value: {{valueToFormat}}</p>
+        <p>Formated Value 1: {{valueToFormat | number: '1.2-2'}}</p>
+        <p>Formated Value 2: {{valueToFormat | number: '3.1-3'}}</p>
+        <p>Formated Value 3: {{valueToFormat | number: '1.0-0'}}</p>
+        
+        <br>
+        <h5> Date Example </h5>
+        <p>Original Date: {{dateToFormat}}</p>
+        <p>Formatted Date 1: {{dateToFormat | date:'shortDate'}}</p>
+        <p>Formatted Date 2: {{dateToFormat | date:'shortTime'}}</p>
+        <p>Formatted Date 3: {{dateToFormat | date:'fullDate'}}</p>
+        <p>Formatted Date 4: {{dateToFormat | date:'medium'}}</p>
+        <p>Formatted Date 5: {{dateToFormat | date:'longDate'}}</p>
+        <p>Formatted Date 6: {{dateToFormat | date:'short'}}</p>
+        <p>Formatted Date 7: {{dateToFormat | date:'mediumTime'}}</p>
+        <p>Formatted Date 8: {{dateToFormat | date:'longTime'}}</p>
+        <p>Formatted Date 9: {{dateToFormat | date:'fullDate'}}</p>
+        <p>Formatted Date 10: {{dateToFormat | date:'MM/dd/yyyy'}}</p>
+        <p>Formatted Date 11: {{dateToFormat | date:'dd/MM/yyyy'}}</p>
+        <p>Formatted Date 11: {{dateToFormat | date:'dd-MMMM-yy'}}</p>
+        <p>Formatted Date 12: {{dateToFormat | date:'yyyy-MM-dd'}}</p>
+        <p>Formatted Date 13: {{dateToFormat | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+        <p>Formatted Date 14: {{dateToFormat | date:'EEEE, MMMM d, y'}}</p>
+        <p>Formatted Date 15: {{dateToFormat | date:'h:mm a'}}</p>
+        <p>Formatted Date 16: {{dateToFormat | date:'HH:mm:ss'}}</p>
+        <p>Formatted Date 17: {{dateToFormat | date:'MMM d, y'}}</p>
+        <p>Formatted Date 18: {{dateToFormat | date:'MMM d, y, h:mm a'}}</p>
+        <p>Formatted Date 19: {{dateToFormat | date:'MMM d, y, h:mm:ss a'}}</p>
+        <p>Formatted Date 20: {{dateToFormat | date:'MMM d, y, h:mm:ss a z'}}</p>
+        <p>Formatted Date 21: {{dateToFormat | date:'MMM d, y, h:mm:ss a zzzz'}}</p>
+        <br>
+        <!--<br>
+        {{firstName | number: '1.2-2'}}<br>
+        {{courseName | number: '1.2-2'}}<br>
+        {{firstName | date:'shortDate'}}<br>
+        {{courseName | date:'shortTime'}}<br>
+        {{firstName | currency:'USD':'symbol':'1.2-2'}}<br>
+        {{courseName | currency:'EUR':'symbol':'1.2-2'}}<br>
+        {{firstName | percent:'1.2-2'}}<br>
+        {{courseName | percent:'1.2-2'}}<br>
+        {{firstName | json}}<br>
+        {{courseName | json}}<br>
+        {{firstName | async}}<br>
+        {{courseName | async}}<br>
+        {{firstName | slice:0:3 | uppercase}}<br>
+        {{courseName | slice:0:5 | lowercase}}<br>
+        {{firstName | titlecase | json}}<br>
+        {{courseName | titlecase | json}}<br>
+        {{firstName | number: '1.2-2' | currency:'USD':'symbol':'1.2-2'}}<br>
+        {{courseName | number: '1.2-2' | currency:'EUR':'symbol':'1.2-2'}}<br>
+        {{firstName | date:'shortDate' | percent:'1.2-2'}}<br>
+        {{courseName | date:'shortTime' | percent:'1.2-2'}}<br> -->
+        
+    </div>
+</div>
