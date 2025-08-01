@@ -8,7 +8,7 @@ import { ControFlow } from './components/contro-flow/contro-flow';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Admin, User, DataBinding, SignalEx, ControFlow, RouterLink],
+  imports: [RouterOutlet, /*Admin, User, DataBinding, SignalEx, ControFlow,*/ RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
