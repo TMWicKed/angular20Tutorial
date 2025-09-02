@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../../services/master';
 
 @Component({
   selector: 'app-user',
@@ -21,22 +22,39 @@ export class User implements OnInit {
 
   http = inject(HttpClient);
 
+  // Injecting the Master service
+  masterService = inject(Master);
+
+  // either you can so the above one or through constructor to define a service
+  // constructor(private master: Master){
+
+  // }
+
   ngOnInit(): void {
     this.getUsers();
+
+    debugger;
+    const result = this.masterService.getSum(5, 10);
+
+    // if we define a variable in the service we can access that accross all the pipes components and directives 
+    debugger;
+    const appData = this.masterService.appName;
   }
 
   getUsers() {
+    debugger;
     // this is the old way to handle errors as you can see the subscribe method has been crossed so it's basically not used anymore
-    this.http
-      .get('https://api.freeprojectapi.com/api/GoalTracker/getAllUsers')
-      .subscribe(
-        (res: any) => {
-          this.userList = res;
-        },
-        (error: any) => {
-          console.error('Error fetching users:', error);
-        }
-      );
+    // this.http
+    //   .get('https://api.freeprojectapi.com/api/GoalTracker/getAllUsers')
+    // instead of using the API directly we can use service
+    this.masterService.getUsers().subscribe(
+      (res: any) => {
+        this.userList = res;
+      },
+      (error: any) => {
+        console.error('Error fetching users:', error);
+      }
+    );
   }
 
   onSaveUser() {
