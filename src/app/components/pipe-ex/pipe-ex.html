@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-3">
+        <span>
+            <h3>Upper and Lower Case Pipe Examples</h3>
+        </span>
+        <p>Original: {{ courseName}}</p>
+        <p>After Upper Case = > {{ courseName | uppercase}}</p>
+        <p>Original: {{ courseDuration}}</p>
+        <p>After Lower Case = > {{ courseDuration | lowercase}}</p>
+        <p>Original: {{ courseTitle}}</p>
+        <p>After Title Case = > {{ courseTitle | titlecase}}</p>
+    </div>
+    <div class="col-4">
+        <span>
+            <h3>Date Pipe Examples</h3>
+        </span>
+        <p>Original: {{ currentDate}}</p>
+        <p>After Date Pipe = > {{ currentDate | date}}</p>
+        <p>After Date Pipe Formatting = > {{ currentDate | date:'shortTime'}}</p>
+        <p>After Date Pipe Formatting = > {{ currentDate | date:'dd/MM/yyyy'}}</p>
+        <p>After Date Pipe Formatting = > {{ currentDate | date:'dd-MM-yyyy'}}</p>
+        <p>After Date Pipe Formatting = > {{ currentDate | date:'dd-MMM-yyyy'}}</p>
+        <p>After Date Pipe Formatting = > {{ currentDate | date:'dd-MMMM-yyyy'}}</p>
+    </div>
+    <div class="col-3">
+        <span>
+            <h3>Slice Pipe Examples</h3>
+        </span>
+        <p>Original: {{ rollNoList}}</p>
+        <p>After Slice Pipe = > {{ rollNoList | slice:1:3}}</p>
+        <p>After Slice Pipe = > {{ rollNoList | slice:3}}</p>
+    </div>
+</div>
+<div class="row">
+        <span>
+            <h3>JSON Pipe Examples</h3>
+        </span>
+        <p>Original: {{ studentObj}}</p>
+        <p>After JSON Pipe = > {{ studentObj | json}}</p>
+    </div>
