@@ -7,11 +7,11 @@ import {
   UpperCasePipe,
 } from '@angular/common';
 import { Component } from '@angular/core';
-import { NaPipe } from '../pipes/na-pipe';
+import { NaPipe } from '../../pipes/na-pipe';
 
 @Component({
   selector: 'app-pipe-ex',
-  imports: [UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, SlicePipe,JsonPipe, NaPipe],
+  imports: [UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, SlicePipe, JsonPipe, NaPipe],
   templateUrl: './pipe-ex.html',
   styleUrl: './pipe-ex.css',
 })
