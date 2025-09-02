@@ -32,9 +32,19 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-4">
         <span>
             <h3>JSON Pipe Examples</h3>
         </span>
         <p>Original: {{ studentObj}}</p>
         <p>After JSON Pipe = > {{ studentObj | json}}</p>
     </div>
+    <div class="col-5">
+        <span>
+            <h3>Custom Pipe Examples</h3>
+        </span>
+        <p>name: {{studentObj.name | na}}</p>
+        <p>email: {{studentObj.email | na}}</p>
+        <p>state: {{studentObj.state | na}}</p>
+    </div>
+</div>
